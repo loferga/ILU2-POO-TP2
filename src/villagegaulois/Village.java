@@ -202,9 +202,9 @@ public class Village {
 		/**
 		 * 
 		 * @return renvoie un tableau contenant les informations de tous les
-		 *         Ã©tals du marchÃ©. Chaque Ã©tal est dÃ©crit sur 3 cases du
+		 *         étals du marché. Chaque étal est décrit sur 3 cases du
 		 *         tableau successives : le nom du vendeur, le nombre de produit
-		 *         qu'il lui reste Ã  vendre, le type de produit Ã  vendre
+		 *         qu'il lui reste à vendre, le type de produit à  vendre
 		 */
 		private String[] donnerEtat() {
 			int tailleTableau = getNbEtalsOccupe() * 3;
