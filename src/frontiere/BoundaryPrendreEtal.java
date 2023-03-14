@@ -37,7 +37,7 @@ public class BoundaryPrendreEtal {
 		System.out.println("Il me faudrait quelques renseignements :");
 		System.out.println("Quel produit souhaitez-vous vendre ?");
 		String produit = scan.next();
-		int quantite = Clavier.entrerEntier("Combien souhaitez-vous en vender ?");
+		int quantite = Clavier.entrerEntier("Combien souhaitez-vous en vendre ?");
 		int numeroEtal = controlPrendreEtal.prendreEtal(nomVendeur, produit, quantite);
 		if (numeroEtal != -1)
 			System.out.println("Le vendeur "
