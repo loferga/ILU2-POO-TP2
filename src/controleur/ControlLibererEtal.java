@@ -26,6 +26,7 @@ public class ControlLibererEtal {
 		Etal etal = controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
 		String[] donneesEtal = null;
 		donneesEtal = etal.etatEtal();  // pas de test null car ne sera applelé que après avoir vérifié la condition isVendeur(nomVendeur)
+		etal.libererEtal();
 		return donneesEtal;
 	}
 
