@@ -1,11 +1,9 @@
 package controleur;
 
 import villagegaulois.Etal;
-import villagegaulois.Village;
 
 public class ControlLibererEtal {
 	private ControlTrouverEtalVendeur controlTrouverEtalVendeur;
-	private Village village;
 
 	public ControlLibererEtal(
 			ControlTrouverEtalVendeur controlTrouverEtalVendeur) {
