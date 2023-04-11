@@ -27,10 +27,8 @@ public class Village {
 	}
 
 	public void ajouterHabitant(Gaulois gaulois) {
-		if (nbVillageois < villageois.length) {
-			villageois[nbVillageois] = gaulois;
-			nbVillageois++;
-		}
+		if (nbVillageois < villageois.length)
+			villageois[nbVillageois++] = gaulois;
 	}
 
 	public Gaulois trouverHabitant(String nomGaulois) {
