@@ -39,10 +39,10 @@ public class ControlAcheterProduit {
 		if (controlVerifierIdentite.verifierIdentite(nomVendeur)) {
 			Etal etal = controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
 			if (etal != null) {
-				if (etal.getQuantite() < montant)
-					montantAcheter = etal.getQuantite();
+				if (montant <= etal.getQuantite())
+					montantAcheter = 0;
 				else
-					montantAcheter = etal.acheterProduit(montantAcheter);
+					montantAcheter = montant - etal.getQuantite();
 			}
 		}
 		return montantAcheter;

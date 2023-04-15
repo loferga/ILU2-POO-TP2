@@ -47,10 +47,12 @@ public class BoundaryAcheterProduit {
 		// demande un entier jusqu'à que le montant soit satisfaisant (que l'acheteur puisse acheter son montant de produit)
 		int montant = Clavier.entrerEntier("");
 		int montantAcheter;
-		while ((montantAcheter = controlAcheterProduit.stockeDisponible(vendeur, montant)) < montant) {
-			System.out.println("Désolé mais je n'ai pas " + montant + " " + produit + " je n'en ai que " + montantAcheter + ".");
+		// TODO edit this part
+		while ((montantAcheter = controlAcheterProduit.stockeDisponible(vendeur, montant)) != 0) {
+			System.out.println("Désolé mais je n'ai pas " + montant + " " + produit + " je n'en ai que " + (montant-montantAcheter) + ".");
 			montant = Clavier.entrerEntier("Combien de fleurs voulez-vous acheter ?");
 		}
+		// to this
 		System.out.println(nomAcheteur + " a acheté " + montant + " de fleurs à " + vendeur);
 	}
 	
