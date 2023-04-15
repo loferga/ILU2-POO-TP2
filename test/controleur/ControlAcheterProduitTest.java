@@ -30,7 +30,7 @@ class ControlAcheterProduitTest {
 
 	@Test
 	void testControlAcheterProduit() {
-		assertNotNull(new ControlAcheterProduit(controlVerifierIdentite, controlTrouverEtalVendeur, village));
+		assertNotNull(new ControlAcheterProduit(controlVerifierIdentite, controlTrouverEtalVendeur, village), "Le contructeur ne doit pas rendre null");
 	}
 	
 	private <T> boolean primeArrayContains(T[] array, T item) {

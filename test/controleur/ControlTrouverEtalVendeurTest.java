@@ -1,11 +1,15 @@
 package controleur;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import personnages.Chef;
+import personnages.Gaulois;
+import villagegaulois.Etal;
 import villagegaulois.Village;
 
 class ControlTrouverEtalVendeurTest {
@@ -23,12 +27,27 @@ class ControlTrouverEtalVendeurTest {
 
 	@Test
 	void testControlTrouverEtalVendeur() {
-		fail("Not yet implemented");
+		assertNotNull(new ControlTrouverEtalVendeur(village), "Le contructeur ne doit pas rendre null");
 	}
 
 	@Test
 	void testTrouverEtalVendeur() {
-		fail("Not yet implemented");
+		ControlTrouverEtalVendeur controlTrouverEtalVendeur = new ControlTrouverEtalVendeur(village);
+		final String PRODUIT = "Poisson";
+		
+		final String NOM_GAULOIS1 = "Astérix";
+		final Gaulois ASTERIX = new Gaulois(NOM_GAULOIS1, 9);
+		village.ajouterHabitant(ASTERIX);
+		village.installerVendeur(ASTERIX, PRODUIT, 7);
+		Etal etal = controlTrouverEtalVendeur.trouverEtalVendeur(NOM_GAULOIS1);
+		
+		final String NOM_GAULOIS2 = "Obélix";
+		assertTrue(etal.getVendeur().equals(ASTERIX));
+		final Gaulois OBELIX = new Gaulois(NOM_GAULOIS2, 13);
+		village.ajouterHabitant(OBELIX);
+		assertNull(controlTrouverEtalVendeur.trouverEtalVendeur(NOM_GAULOIS2));
+		
+		assertNull(controlTrouverEtalVendeur.trouverEtalVendeur("inconnue"));
 	}
 
 }
